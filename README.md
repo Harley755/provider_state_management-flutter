@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+You can add movies to your favorites, delete them and see the list of movies you have added to your favorites
 
 A few resources to get you started if this is your first Flutter project:
 
