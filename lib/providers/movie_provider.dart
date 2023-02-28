@@ -6,8 +6,8 @@ import 'package:provider_state_management/models/movie_model.dart';
 final List<Movie> initialData = List.generate(
   50,
   (index) => Movie(
-    title: "Movie $index+1",
-    duration: "${Random().nextInt(100) + 60} minutes",
+    title: "Movie $index",
+    duration: "${Random().nextInt(100) + 60}",
   ),
 );
 
@@ -26,5 +26,18 @@ class MovieProvider extends ChangeNotifier {
   void removeFromList(Movie movie) {
     _myList.remove(movie);
     notifyListeners();
+  }
+
+  Stream<int> addDuration(List<Movie> myListDuration) async* {
+    await Future.delayed(const Duration(seconds: 1));
+    List<int> duration = [];
+    int totalDuration = 0;
+    for (var i = 0; i < myListDuration.length; i++) {
+      duration.add(int.parse(myListDuration[i].duration.toString()));
+    }
+    for (var i = 0; i < duration.length; i++) {
+      totalDuration += duration[i];
+    }
+    yield totalDuration;
   }
 }

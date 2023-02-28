@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: const TextStyle(color: Colors.white),
                       ),
                       subtitle: Text(
-                        currentMovie.duration ?? 'No information',
+                        "${currentMovie.duration ?? 'No information'} minutes",
                         style: const TextStyle(color: Colors.white),
                       ),
                       trailing: IconButton(

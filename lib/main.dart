@@ -5,8 +5,12 @@ import 'package:provider_state_management/screens/home_screen.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider<MovieProvider>(
-      create: (_) => MovieProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<MovieProvider>(
+          create: (_) => MovieProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
